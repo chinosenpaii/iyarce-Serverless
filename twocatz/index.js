@@ -20,7 +20,7 @@ module.exports = async function (context, req) {
     }
 
     function getNames() {
-        let names = ["Fifi", "Daniel"];
+        let names = ["Shreya", "Emily", "Fifi", "Beau", "Evelyn", "Julia", "Daniel", "Fardeen"];
         let random_value = Math.floor(names.length * Math.random());
         let resultname = names[random_value];
         return resultname;
