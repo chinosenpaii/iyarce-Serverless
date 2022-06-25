@@ -47,27 +47,29 @@ module.exports = async function (context, req) {
     };
 }
 
-async function analyzeImage(img, context) {
+async function analyzeImage(img, context){
     const KEY = process.env["FACE_API_KEY"];
     const URI_BASE = process.env["FACE_API_URI"] + "/face/v1.0/detect";
+	// env variables (similar to .gitignore/.env file) to not expose personal info
 
-    let params = new URLSearchParams({
+    const params = new URLSearchParams({
         returnFaceId: "true",
         returnFaceAttributes: "age",
-    });
+    })
 
-    //context.log(URI_BASE +  "?" + params.toString());
-
-
-    const resp = await fetch(URI_BASE + "?" + params.toString(), {
+    // making the post request
+    const resp = await fetch(URI_BASE + '?' + params.toString(),{
         method: 'POST',
         body: img,
+        // img is the parameter inputted
         headers: {
-            'CONTENT-TYPE': 'application/octet-stream',
-            "Ocp-Apim-Subscription-Key": KEY
+            'Content-Type' : 'application/octet-stream',
+            // HOW DO YOU AUTHENTICATE?
+            "Ocp-Apim-Subscription-Key" : KEY,
         }
-    });
+    })
 
+    // receive the response
     const data = await resp.json();
 
     return data;
