@@ -53,8 +53,8 @@ async function analyzeImage(img, context){
 	// env variables (similar to .gitignore/.env file) to not expose personal info
 
     const params = new URLSearchParams({
-        returnFaceId: "true",
-        returnFaceAttributes: "age",
+        'returnFaceId': 'true',
+        'returnFaceAttributes': 'age'
     })
 
     // making the post request
@@ -63,9 +63,9 @@ async function analyzeImage(img, context){
         body: img,
         // img is the parameter inputted
         headers: {
-            'Content-Type' : 'application/octet-stream',
+            'Content-Type': 'application/octet-stream',
             // HOW DO YOU AUTHENTICATE?
-            "Ocp-Apim-Subscription-Key" : KEY,
+            "Ocp-Apim-Subscription-Key": KEY
         }
     })
 
