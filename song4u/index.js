@@ -16,7 +16,7 @@ module.exports = async function (context, req) {
 
     const result = analyzeImage(data);
 
-    context.log(result);
+    //context.log(result);
 
     const age = result[0].faceAttributes.age;
 
