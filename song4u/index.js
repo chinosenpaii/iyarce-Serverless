@@ -48,7 +48,7 @@ module.exports = async function (context, req) {
 }
 
 async function analyzeImage(img, context){
-    const KEY = process.env["FACE_API_KEY"];
+    //const KEY = process.env["FACE_API_KEY"];
     const URI_BASE = process.env["FACE_API_URI"] + "/face/v1.0/detect";
 	// env variables (similar to .gitignore/.env file) to not expose personal info
 
@@ -65,7 +65,7 @@ async function analyzeImage(img, context){
         headers: {
             'Content-Type': 'application/octet-stream',
             // HOW DO YOU AUTHENTICATE?
-            "Ocp-Apim-Subscription-Key": KEY
+            "Ocp-Apim-Subscription-Key": process.env.FACE_API_KEY
         }
     })
 
