@@ -9,14 +9,14 @@ module.exports = async function (context, req) {
     const url = queryObject.MediaUrl0;
 
     const resp = await fetch(url, {
-        method: "GET",
-    })
+        method: "GET"
+    });
 
     const data = await resp.arrayBuffer();
 
-    const result = analyzeImage(data);
+    const result = await analyzeImage(data);
 
-    //context.log(result);
+    context.log(result);
 
     const age = result[0].faceAttributes.age;
 
@@ -40,36 +40,34 @@ module.exports = async function (context, req) {
 
     context.log(id);
 
-    //context.log(url);
     context.res = {
         // status: 200, /* Defaults to 200 */
-        body: id,
+        body: id
     };
 }
 
-async function analyzeImage(img, context){
-    //const KEY = process.env["FACE_API_KEY"];
-    const URI_BASE = process.env["FACE_API_URI"] + "/face/v1.0/detect";
-	// env variables (similar to .gitignore/.env file) to not expose personal info
+async function analyzeImage(img){
+
+    // const subscriptionKey = process.env.SUBSCRIPTIONKEY;
+    const KEY = process.env["FACE_API_KEY"];
+    //const uriBase = process.env.ENDPOINT + '/face/v1.0/detect';
+    const URI_BASE = process.env["FACE_API_URI"];
+
 
     const params = new URLSearchParams({
         'returnFaceId': 'true',
-        'returnFaceAttributes': 'age'
+        'returnFaceAttributes': 'age'     //FILL IN THIS LINE
     })
 
-    // making the post request
-    const resp = await fetch(URI_BASE + '?' + params.toString(),{
+    const resp = await fetch(URI_BASE + "?" + params.toString(), {
         method: 'POST',
         body: img,
-        // img is the parameter inputted
         headers: {
             'Content-Type': 'application/octet-stream',
-            // HOW DO YOU AUTHENTICATE?
-            "Ocp-Apim-Subscription-Key": process.env.FACE_API_KEY
+            'Ocp-Apim-Subscription-Key': KEY
         }
-    })
+    });
 
-    // receive the response
     const data = await resp.json();
 
     return data;
