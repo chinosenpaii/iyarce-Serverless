@@ -47,8 +47,8 @@ module.exports = async function (context, req) {
 }
 
 async function analyzeImage(img){
-    const KEY = process.env["FACE_API_KEY"];
-    const URI_BASE = process.env["FACE_API_URI"] + "/face/v1.0/detect";
+    const KEY = process.env["SUBSCRIPTIONKEY"];
+    const URI_BASE = process.env["ENDPOINT"] + "/face/v1.0/detect";
 
 
     const params = new URLSearchParams({
