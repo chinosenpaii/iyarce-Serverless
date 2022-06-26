@@ -23,19 +23,19 @@ module.exports = async function (context, req) {
     let id = "";
 
     if(age > 5 && age < 25) {
-        id = 'GenZ';
+        id = "GenZ";
     }
     else if(age > 24 && age < 41) {
-        id = 'GenY';
+        id = "GenY";
     }
     else if(age > 40 && age < 57) {
-        id = 'GenX';
+        id = "GenX";
     }
     else if(age > 56 && age < 76) {
-        id = 'BabyBoomers';
+        id = "BabyBoomers";
     }
     else {
-        id = 'Unknown';
+        id = "Unknown";
     }
 
     context.log(id);
