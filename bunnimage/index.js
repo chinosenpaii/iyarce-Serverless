@@ -30,3 +30,25 @@ bunnForm.addEventListener('submit', function (event) {
     const data = await resp.text();
     output.textContent = "Your image has been stored successfully!";
   });
+
+  const downloadButton = document.getElementById("button1");
+
+  downloadButton.addEventListener("click", async function (event) {
+    var username = document.getElementById("downloadusername").value;
+    console.log("attempting to get your image...");
+
+    const url = "https://serverless2022.azurewebsites.net/api/bunnimage-download?code=vvWSu4ZYEHZhpDlXhcaYpqwR71EafeE0Pt_UVMxVLAqgAzFuh_1C7Q==";
+
+    const resp = await fetch(url, {
+        method: "GET",
+        headers: {
+            username: username,
+        }
+    })
+
+    const data = await resp.json();
+
+    console.log("image has been received");
+    
+    window.open(data.downloadURI, "_self");
+  });
