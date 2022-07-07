@@ -19,23 +19,22 @@ module.exports = async function (context, req) {
         return base64data;
     }
 
-    function getNames() {
-        let names = ["Shreya", "Emily", "Fifi", "Beau", "Evelyn", "Julia", "Daniel", "Fardeen"];
-        let random_value = Math.floor(names.length * Math.random());
-        let resultname = names[random_value];
-        return resultname;
-    }
+    
 
     var firstcat = await getCatPic();
     var secondcat = await getCatPic();
-    var name1 = getNames();
-    var name2 = getNames();
+    var thirdcat = await getCatPic();
+    var fourthcat = await getCatPic();
+    //var name1 = getNames();
+    //var name2 = getNames();
 
     context.res = {
         body: {
             cat1: firstcat,
             cat2: secondcat,
-            names: [name1, name2]
+            cat3: thirdcat,
+            cat4: fourthcat
+            //names: [name1, name2]
         }
     }
 }
