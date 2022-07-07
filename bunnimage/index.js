@@ -1,6 +1,6 @@
 const bunnForm = document.getElementById('bunnForm');
 
-bunnForm.addEventListener('submit', function (event) {
+bunnForm.addEventListener("submit", async function (event) {
     event.preventDefault()
     const username = document.getElementById("username").value
     const output = document.getElementById("output")
@@ -31,9 +31,9 @@ bunnForm.addEventListener('submit', function (event) {
     output.textContent = "Your image has been stored successfully!";
   });
 
-  const downloadButton = document.getElementById("button1");
+const downloadButton = document.getElementById("button1");
 
-  downloadButton.addEventListener("click", async function (event) {
+downloadButton.addEventListener("click", async function (event) {
     var username = document.getElementById("downloadusername").value;
     console.log("attempting to get your image...");
 
