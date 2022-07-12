@@ -3,27 +3,40 @@
 ### Azure Services
 
 **Name of Service**
-- [replace with bullet list of what purpose(s) it serves for my project]
-- [include how it will interact with other components of your project listed above/below]
+- MusicBot
+- A bot that you can chat with about wanting to find new music and will provide music of different genres that a user may have never heard before.
+- Bot Services
+- Cosmos DB
+- Bot Framework Composer
+
+
+- FoodBot
+- A bot that can help recommend you different types of popular food based off your location.
+- Bot Services
+- Cosmos DB
+- Bot Framework Composer
 
 ### APIs
 
 **Name of API**
-- [replace with bullet list of what purpose(s) it serves for my project]
-- [include how it will interact with other components of your project listed above/below]
+- IP Geo Location
+- ITunes API
+- Spotify API
+- GrubHub Food API
 
 ### Packages/Libraries/Databases
 
 **Name of Packages/Library/Database**
-- [replace with bullet list of what purpose(s) it serves for my project]
-- [include how it will interact with other components of your project listed above/below]
+- Cosmos DB
+- Node-fetch
+- Dialog Library
+
 
 ### Front-end Languages
 
 **Name of Language**
-- [replace with bullet list of what purpose(s) it serves for my project]
-- [include how it will interact with other components of your project listed above/below]
+- Javascript
 
 ### Flowchart
 
-[Replace with image of final flowchart]
+![ChatBot](https://user-images.githubusercontent.com/71238981/178579941-77185c6d-444c-4e88-add4-108f4faa358f.png)
