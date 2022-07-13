@@ -39,4 +39,4 @@
 
 ### Flowchart
 
-![ChatBot](https://user-images.githubusercontent.com/71238981/178579941-77185c6d-444c-4e88-add4-108f4faa358f.png)
+![Serverless Camp Project](https://user-images.githubusercontent.com/71238981/178828140-b7b7e0df-49c0-4643-ad3b-f633164fcd33.jpg)
